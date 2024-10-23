@@ -6,7 +6,7 @@ interface MarketingLayoutProps {
 
 const MarketingLayout = ({ children }: MarketingLayoutProps) => {
   return (
-    <div className="selection:bg-red-300">
+    <div className="selection:bg-red-500 selection:text-white">
       <Navbar />
       {children}
     </div>

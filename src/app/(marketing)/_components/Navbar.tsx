@@ -10,13 +10,13 @@ const Navbar = () => {
         <Link href={'/'} className='mr-auto'>
           <BrandLogo />
         </Link>
-        <Link href={'#'} className='text-lg'>
+        <Link href={'/#'} className='text-lg'>
           Features
         </Link>
-        <Link href={'#'} className='mr-auto'>
+        <Link href={'/#'} className='mr-auto'>
           Pricing
         </Link>
-        <Link href={'#'} className='mr-auto'>
+        <Link href={'/#'} className='mr-auto'>
           About
         </Link>
         <span>
