@@ -16,6 +16,8 @@ import {
 import { formateCompactNumber } from "@/lib/formatter";
 import React from "react";
 import { cn } from "@/lib/utils";
+import BrandLogo from "@/components/BrandLogo";
+import FooterLinkGroup from "@/components/FooterLinkGroup";
 
 export default async function Home() {
   return (
@@ -83,6 +85,24 @@ export default async function Home() {
           ))}
         </div>
       </section>
+      <footer className="container pt-16 pb-8 flex flex-col sm:flex-row gap-8 sm:gap-4 justify-between items-start">
+        <Link href={'/'}>
+          <BrandLogo />
+        </Link>
+        <div className="flex flex-col sm:flex-row gap-8">
+          <div className="flex flex-col gap-8">
+            <FooterLinkGroup title="Help" links={[
+              { label: 'PPP Discounts', href: '#' },
+              { label: 'Discount API', href: '#' }
+            ]} />
+            <FooterLinkGroup title="Solutions" links={[
+              { label: 'Newsletter', href: '#' },
+              { label: 'SaaS Business', href: '#' },
+              { label: 'Online Course', href: '#' }
+            ]} />
+          </div>
+        </div>
+      </footer>
     </>
   );
 }
@@ -120,7 +140,11 @@ function PricingCard({
         </SignUpButton>
       </CardContent>
       <CardFooter className="flex flex-col gap-4 items-start">
-        <Feature>sarfraz</Feature>
+        <Feature className="font-bold">{maxNumberOfProducts} {maxNumberOfProducts === 1 ? "product" : "products"}</Feature>
+        <Feature>PPP distcounts</Feature>
+        {canAccessAnalytics && <Feature>Advanced analytics</Feature>}
+        {canRemoveBranding && <Feature>Remove easy PPP</Feature>}
+        {canCustomizeBanner && <Feature>Banner customization</Feature>}
       </CardFooter>
     </Card>
   );
@@ -136,7 +160,7 @@ function Feature({
   return (
     <div className={cn("flex items-center gap-2", className)}>
       <CheckIcon className="size-5 rounded-full text-orange-400 bg-orange-400/20 p-0.5" />
-      <span>{children}</span> 
+      <span>{children}</span>
     </div>
   );
-}mc
+}
